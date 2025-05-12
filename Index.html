@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Подключение Google Fonts в <head> -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="Styles/slick.css" rel="stylesheet">
+    <link href="Styles/slick-theme.css" rel="stylesheet">
+    <link rel="stylesheet" href="Styles/styles.css">
+    <!-- Добавление фавикона в <head> -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" href="./favicon/favicon.ico">
+    <title>Etavrian</title>
+</head>
+
+<body>
+
+    <svg width="0" height="0" class="hidden" style="position:absolute;">
+        <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 24" id="Vector Галочка">
+            <path d="M9.53383 18.9351L2.42183 11.472L0 13.9955L9.53383 24L30 2.52349L27.5952 0L9.53383 18.9351Z"
+                fill="#49C607"></path>
+        </symbol>
+    </svg>
+
+    <svg width="0" height="0" class="hidden" style="position:absolute;">
+        <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="Vector">
+            <path
+                d="M12 0C5.4 0 0 5.4 0 12C0 18.6 5.4 24 12 24C18.6 24 24 18.6 24 12C24 5.4 18.6 0 12 0ZM12 2.66667C14.0667 2.66667 16 3.4 17.6 4.53333L4.53333 17.6C3.4 16 2.66667 14.0667 2.66667 12C2.66667 6.86667 6.86667 2.66667 12 2.66667ZM12 21.3333C9.93333 21.3333 8 20.6 6.4 19.4667L19.4667 6.4C20.6 8 21.3333 9.93333 21.3333 12C21.3333 17.1333 17.1333 21.3333 12 21.3333Z"
+                fill="#EB2828"></path>
+        </symbol>
+    </svg>
+
+    <svg width="0" height="0" class="hidden" style="position:absolute;">
+        <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 25" id="Vector Знако вопроса">
+            <path
+                d="M12.96 19.1072C12.96 19.2971 12.9037 19.4827 12.7982 19.6405C12.6927 19.7984 12.5428 19.9214 12.3674 19.9941C12.192 20.0668 11.9989 20.0858 11.8127 20.0487C11.6265 20.0117 11.4554 19.9203 11.3212 19.786C11.1869 19.6517 11.0955 19.4807 11.0584 19.2945C11.0214 19.1082 11.0404 18.9152 11.1131 18.7398C11.1857 18.5644 11.3088 18.4145 11.4667 18.309C11.6245 18.2035 11.8101 18.1472 12 18.1472C12.2546 18.1472 12.4988 18.2483 12.6788 18.4284C12.8589 18.6084 12.96 18.8526 12.96 19.1072ZM12 6.62719C9.618 6.62719 7.68 8.35039 7.68 10.4672V10.9472C7.68 11.0745 7.73057 11.1966 7.82059 11.2866C7.91061 11.3766 8.0327 11.4272 8.16 11.4272C8.28731 11.4272 8.4094 11.3766 8.49942 11.2866C8.58943 11.1966 8.64 11.0745 8.64 10.9472V10.4672C8.64 8.87959 10.1472 7.58719 12 7.58719C13.8528 7.58719 15.36 8.87959 15.36 10.4672C15.36 12.0548 13.8528 13.3472 12 13.3472C11.8727 13.3472 11.7506 13.3978 11.6606 13.4878C11.5706 13.5778 11.52 13.6999 11.52 13.8272V14.7872C11.52 14.9145 11.5706 15.0366 11.6606 15.1266C11.7506 15.2166 11.8727 15.2672 12 15.2672C12.1273 15.2672 12.2494 15.2166 12.3394 15.1266C12.4294 15.0366 12.48 14.9145 12.48 14.7872V14.2832C14.64 14.0708 16.32 12.44 16.32 10.4672C16.32 8.35039 14.382 6.62719 12 6.62719ZM24 12.8672C24 15.2406 23.2962 17.5606 21.9776 19.534C20.6591 21.5074 18.7849 23.0455 16.5922 23.9537C14.3995 24.862 11.9867 25.0996 9.65892 24.6366C7.33115 24.1736 5.19295 23.0307 3.51472 21.3525C1.83649 19.6742 0.693605 17.536 0.230582 15.2083C-0.232441 12.8805 0.00519922 10.4677 0.913451 8.27498C1.8217 6.08227 3.35977 4.20813 5.33316 2.88955C7.30655 1.57098 9.62663 0.867188 12 0.867188C15.1815 0.870681 18.2317 2.13609 20.4814 4.38576C22.7311 6.63544 23.9965 9.68566 24 12.8672ZM23.04 12.8672C23.04 10.6837 22.3925 8.54921 21.1794 6.73369C19.9663 4.91817 18.2421 3.50315 16.2248 2.66756C14.2075 1.83197 11.9878 1.61334 9.84621 2.03932C7.70466 2.4653 5.73752 3.51676 4.19355 5.06073C2.64957 6.6047 1.59812 8.57184 1.17214 10.7134C0.746155 12.8549 0.964784 15.0747 1.80037 17.092C2.63597 19.1093 4.05099 20.8335 5.86651 22.0466C7.68203 23.2597 9.8165 23.9072 12 23.9072C14.927 23.904 17.7332 22.7398 19.803 20.6701C21.8727 18.6004 23.0368 15.7942 23.04 12.8672Z"
+                fill="#191A23"></path>
+        </symbol>
+    </svg>
+
+    <svg width="0" height="0" class="hidden" style="position:absolute;">
+        <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 23" id="Arrow">
+            <path
+                d="M22 13.0947C22.8284 13.0947 23.5 12.4232 23.5 11.5947C23.5 10.7663 22.8284 10.0947 22 10.0947L22 13.0947ZM0.939341 10.5341C0.353554 11.1199 0.353554 12.0696 0.93934 12.6554L10.4853 22.2013C11.0711 22.7871 12.0208 22.7871 12.6066 22.2013C13.1924 21.6155 13.1924 20.6658 12.6066 20.08L4.12132 11.5947L12.6066 3.10944C13.1924 2.52366 13.1924 1.57391 12.6066 0.988124C12.0208 0.402337 11.0711 0.402337 10.4853 0.988124L0.939341 10.5341ZM22 10.0947L2 10.0947L2 13.0947L22 13.0947L22 10.0947Z"
+                fill="white" fill-opacity="0.3"></path>
+        </symbol>
+    </svg>
+
+    <svg width="0" height="0" class="hidden" style="position:absolute;">
+        <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 20" id="arrow-link">
+            <path
+                d="M1.25 13.701C0.532561 14.1152 0.286748 15.0326 0.700962 15.75C1.11518 16.4674 2.03256 16.7133 2.75 16.299L1.25 13.701ZM20.7694 5.38823C20.9838 4.58803 20.5089 3.76552 19.7087 3.55111L6.66874 0.0570541C5.86854 -0.157359 5.04603 0.317515 4.83162 1.11771C4.61721 1.91791 5.09208 2.74042 5.89228 2.95483L17.4834 6.06066L14.3776 17.6518C14.1631 18.452 14.638 19.2745 15.4382 19.4889C16.2384 19.7033 17.0609 19.2284 17.2753 18.4282L20.7694 5.38823ZM2.75 16.299L20.0705 6.29904L18.5705 3.70096L1.25 13.701L2.75 16.299Z"
+                fill="#191A23"></path>
+        </symbol>
+    </svg>
+
+    <svg width="0" height="0" class="hidden" style="position:absolute;">
+        <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 73 62" id="play">
+            <path
+                d="M48.8697 23.2668L31.7886 11.8124C31.4669 11.5964 31.0928 11.4725 30.7065 11.4537C30.3201 11.435 29.936 11.5222 29.5951 11.7059C29.2541 11.8897 28.9693 12.1632 28.7708 12.4972C28.5724 12.8311 28.4679 13.2131 28.4685 13.6021V36.511C28.4679 36.9001 28.5724 37.282 28.7708 37.616C28.9693 37.9499 29.2541 38.2234 29.5951 38.4072C29.936 38.591 30.3201 38.6781 30.7065 38.6594C31.0928 38.6406 31.4669 38.5167 31.7886 38.3008L48.8697 26.8463C49.1633 26.6504 49.4042 26.3845 49.5708 26.0722C49.7374 25.7599 49.8246 25.411 49.8246 25.0566C49.8246 24.7022 49.7374 24.3532 49.5708 24.041C49.4042 23.7287 49.1633 23.4627 48.8697 23.2668ZM32.7387 32.4984V17.6148L43.8343 25.0566L32.7387 32.4984ZM67.6126 0H4.98198C3.66068 0 2.39349 0.527976 1.45919 1.46778C0.524886 2.40758 0 3.68223 0 5.01131V45.1018C0 46.4309 0.524886 47.7055 1.45919 48.6454C2.39349 49.5852 3.66068 50.1131 4.98198 50.1131H67.6126C68.9339 50.1131 70.2011 49.5852 71.1354 48.6454C72.0697 47.7055 72.5946 46.4309 72.5946 45.1018V5.01131C72.5946 3.68223 72.0697 2.40758 71.1354 1.46778C70.2011 0.527976 68.9339 0 67.6126 0ZM68.3243 45.1018C68.3243 45.2917 68.2493 45.4738 68.1159 45.608C67.9824 45.7423 67.8014 45.8177 67.6126 45.8177H4.98198C4.79322 45.8177 4.6122 45.7423 4.47873 45.608C4.34525 45.4738 4.27027 45.2917 4.27027 45.1018V5.01131C4.27027 4.82144 4.34525 4.63935 4.47873 4.50509C4.6122 4.37084 4.79322 4.29541 4.98198 4.29541H67.6126C67.8014 4.29541 67.9824 4.37084 68.1159 4.50509C68.2493 4.63935 68.3243 4.82144 68.3243 5.01131V45.1018ZM72.5946 59.4199C72.5946 59.9895 72.3696 60.5357 71.9692 60.9385C71.5688 61.3413 71.0257 61.5676 70.4595 61.5676H2.13514C1.56886 61.5676 1.02578 61.3413 0.625366 60.9385C0.224951 60.5357 0 59.9895 0 59.4199C0 58.8503 0.224951 58.304 0.625366 57.9012C1.02578 57.4984 1.56886 57.2722 2.13514 57.2722H70.4595C71.0257 57.2722 71.5688 57.4984 71.9692 57.9012C72.3696 58.304 72.5946 58.8503 72.5946 59.4199Z"
+                fill="#49C607"></path>
+        </symbol>
+    </svg>
+    
+    <header class="header">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="Index.html"><img src="Images/Screenshot_1.webp" alt="Etavrian"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="Index.html">About us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Services.html">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Use-Cases.html">Use Cases</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Pricing.html">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Blog.html">Blog</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container pb-5">
+        <section class="d-flex">
+            <div class="text-container">
+                <h1>Scale Your E-commerce Business Safely - <br> Pay Only for Results</h1>
+                <p>We offer performance-driven Google Ads management with dedicated, solution-focused project
+                    managers.
+                    Our tailored strategies maximize your ROAS by cutting wasted spend, and we handle everything
+                    from
+                    strategy to execution. With seamless integration into your overall marketing, you can focus on
+                    growth while leaving the micromanagement to us.</p>
+                <div class="btn-container">
+                    <div class="btn-group">
+                        <a href="#calendly" class="btn-1">Discuss this offer</a>
+                        <p class="between-text">or</p>
+                        <a href="#" class="btn-2">See what else you'll get</a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="photo-container">
+                <img src="Images/Etavrian_photo.png" alt="ceo">
+            </div>
+        </section>
+
+        <div class="companies">
+            <p>Trusted by e-commerce companies like:</p>
+            <div class="companies-images">
+                <img src="Images/Amazon_logono fon.svg.webp" alt="logoAmazon">
+                <img src="Images/dribbble.svg" alt="dribbblelogo">
+                <img src="Images/HubSpot_Logo.svg.webp" alt="hubspotlogo">
+                <img src="Images/notion-logo-png_seeklogo-425508.webp" alt="Notionlogo">
+                <img src="Images/Netflix_2015_logo.svg-removebg-preview.webp" alt="Netflixlogo">
+                <img src="Images/Zoom_Communications_Logo.svg-removebg-preview.webp" alt="Zoomlogo">
+            </div>
+        </div>
+
+        <section class="problem-block">
+            <div class="problem-header">
+                <p>Problem #1</p>
+                <h2 class="problem-heading">High CAC, low conversions, and zero clarity - the longer this goes on, the
+                    harder it becomes to fix.
+                </h2>
+                <p class="problem-description">You know your Google Ads aren't pulling in the returns you need, but
+                    something's holding you back from making a change. Let's break it down:</p>
+            </div>
+            <div class="problem-details">
+                <div class="problem-item">
+                    <h3 class="problem-title">Too costly</h3>
+                    <p>Your customer acquisition costs (CAC) are sky-high, eating into your margins. Every wasted dollar
+                        feels like money down the drain.</p>
+                </div>
+                <div class="problem-item">
+                    <h3 class="problem-title">Too time-consuming</h3>
+                    <p>You don't have the bandwidth to monitor every little detail, but without constant attention, your
+                        campaigns are stalling. Your team’s already maxed out.</p>
+                </div>
+                <div class="problem-item">
+                    <h3 class="problem-title">Too confusing</h3>
+                    <p>You're overwhelmed by data. Are your keywords optimized? Are you bidding on the right products?
+                        It’s
+                        hard to know where to focus without clear insights.</p>
+                </div>
+            </div>
+            <div class="solution">
+                <h2 class="problem-heading">The Solution</h2>
+                <div class="problem-details">
+                    <div class="problem-item">
+                        <h3 class="problem-title">Lower Costs, Higher ROAS</h3>
+                        <p>We zero in on reducing your CAC and boosting ROAS with targeted campaigns that cut out wasted
+                            spend.</p>
+                    </div>
+                    <div class="problem-item">
+                        <h3 class="problem-title">Save Time with Our Expert Team</h3>
+                        <p>Our project managers handle all the details, freeing up your team’s time and ensuring your
+                            campaigns stay on track.</p>
+                    </div>
+                    <div class="problem-item">
+                        <h3 class="problem-title">Clarity and Control</h3>
+                        <p>We give you tailored reports with clear, actionable insights. No more guesswork—just
+                            data-driven
+                            decisions that drive ROI.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="problem-block">
+            <div class="problem-header">
+                <p>Problem #2</p>
+                <h2 class="problem-heading">Poor project management, fragmented communication, and no
+                    ownership of results
+                </h2>
+                <p class="problem-description">Without clear communication and better management, you'll continue
+                    micromanaging while your ad campaigns underperform,
+                    leading to wasted budget and missed growth.</p>
+            </div>
+            <div class="problem-details">
+                <div class="problem-item">
+                    <h3 class="problem-title">Disjointed Management</h3>
+                    <p>Our project managers and PPC specialists work seamlessly together, ensuring campaigns are
+                        cohesive
+                        from day one. Unclear Communication</p>
+                </div>
+                <div class="problem-item">
+                    <h3 class="problem-title">No Clear Accountability</h3>
+                    <p>Processes are overseen, but no one is truly responsible for the success of your campaigns. Ad
+                        spend
+                        is monitored, but who's owning the ROI?</p>
+                </div>
+                <div class="problem-item">
+                    <h3 class="problem-title">Too confusing</h3>
+                    <p>You're overwhelmed by data. Are your keywords optimized? Are you bidding on the right products?
+                        It’s
+                        hard to know where to focus without clear insights.</p>
+                </div>
+            </div>
+            <div class="solution">
+                <h2 class="problem-heading">The Solution</h2>
+                <div class="problem-details">
+                    <div class="problem-item">
+                        <h3 class="problem-title">Aligned Collaboration</h3>
+                        <p>Our project managers and PPC specialists work together seamlessly, ensuring your campaigns
+                            are
+                            cohesive and effective from day one.</p>
+                    </div>
+                    <div class="problem-item">
+                        <h3 class="problem-title">Transparent Communication</h3>
+                        <p>You get consistent, clear updates- no more guessing about your campaign's performance.</p>
+                    </div>
+                    <div class="problem-item">
+                        <h3 class="problem-title">Results-Driven Accountability</h3>
+                        <p>We take full responsibility for your campaign's success. Both your project manager and PPC
+                            team
+                            are fully committed to maximizing ROl and delivering the results your business needs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cases">
+            <div class="case-text">
+                <div class="case-studies">
+                    <h2>Case studies</h2>
+                </div>
+
+                <div class="textsee">
+                    <p>See how we've delivered results and helped businesses grow through proven strategies</p>
+                </div>
+            </div>
+
+            <div class="roastext">
+                <div class="roas">
+                    <p class="roas-title">ROAS 3.11</p>
+                    <p class="roas-revenue">Revenue: $90123</p>
+                    <p>For a local restaurant, we implemented a targeted PPC campaign that resulted in a 50% increase in
+                        website traffic and a 25% increase in sales.</p>
+                    <a href="#" class="learn-more">
+                        Learn More
+                        <svg class="icon">
+                            <use xlink:href="#arrow-link"></use>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="roas">
+                    <p class="roas-title">ROAS 3.11</p>
+                    <p class="roas-revenue">Revenue: $90123</p>
+                    <p>For a local restaurant, we implemented a targeted PPC campaign that resulted in a 50% increase in
+                        website traffic and a 25% increase in sales.</p>
+                    <a href="#" class="learn-more">
+                        Learn More
+                        <svg class="icon">
+                            <use xlink:href="#arrow-link"></use>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="roas">
+                    <p class="roas-title">ROAS 3.11</p>
+                    <p class="roas-revenue">Revenue: $90123</p>
+                    <p>For a local restaurant, we implemented a targeted PPC campaign that resulted in a 50% increase in
+                        website traffic and a 25% increase in sales.</p>
+                    <a href="#" class="learn-more">
+                        Learn More
+                        <svg class="icon">
+                            <use xlink:href="#arrow-link"></use>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="text4">
+                <p>Need more cases? Contact us so we can show the most relevant case studies to your business.</p>
+            </div>
+        </section>
+
+        <section class="greycontainer2">
+            <div class="text-block1">
+                <h3>Contact us to discuss your objectives</h3>
+                <p>Contact us now to learn how we can help your business grow and succeed online.</p>
+                <div class="bottomdiskuss">
+                    <a href="#calendly" class="button-1">
+                        Discuss and set objectives
+                    </a>
+                </div>
+            </div>
+            <div class="image-container">
+                <img src="Images/Etavrianlogo.webp" alt="Logo">
+            </div>
+        </section>
+
+        <section class="comparison-table">
+            <div class="e-comm">
+                <h2>E-commerce PPC Agency Comparison</h2>
+                <p>See how we stack up against other E-commerce PPC agencies</p>
+            </div>
+            <div class="etavr-other">
+                <div></div>
+                <p class="etavr-title">Etavrian</p>
+                <p class="other-title">Other Agencies</p>
+            </div>
+            <div>
+                <div class="comparison-row">
+                    <div class="feature">Performance-based management fee (pay with higher ROAS)</div>
+                    <div class="text-center">
+                        <svg class="icon-check">
+                            <use xlink:href="#Vector Галочка"></use>
+                        </svg>
+                    </div>
+                    <div class="text-center">
+                        <svg class="icon-cancel">
+                            <use xlink:href="#Vector"></use>
+                        </svg>
+                    </div>
+                </div>
+                <div class="comparison-row">
+                    <div class="feature">Dedicated project managers with individual approach</div>
+                    <div class="text-center">
+                        <svg class="icon-check">
+                            <use xlink:href="#Vector Галочка"></use>
+                        </svg>
+                    </div>
+                    <div class="text-center">
+                        <svg class="icon-cancel">
+                            <use xlink:href="#Vector"></use>
+                        </svg>
+                    </div>
+                </div>
+                <div class="comparison-row">
+                    <div class="feature">No additional costs for PPC software</div>
+                    <div class="text-center">
+                        <svg class="icon-check">
+                            <use xlink:href="#Vector Галочка"></use>
+                        </svg>
+                    </div>
+                    <div class="text-center">
+                        <svg class="icon-cancel">
+                            <use xlink:href="#Vector"></use>
+                        </svg>
+                    </div>
+                </div>
+                <div class="comparison-row">
+                    <div class="feature">Server-side tracking & advanced analytic setup</div>
+                    <div class="text-center">
+                        <svg class="icon-check">
+                            <use xlink:href="#Vector Галочка"></use>
+                        </svg>
+                    </div>
+                    <div class="text-center">
+                        <svg class="icon-cancel">
+                            <use xlink:href="#Vector"></use>
+                        </svg>
+                    </div>
+                </div>
+                <div class="comparison-row">
+                    <div class="feature">Conversion Rate Optimization (CRO) Support</div>
+                    <div class="text-center">
+                        <svg class="icon-check">
+                            <use xlink:href="#Vector Галочка"></use>
+                        </svg>
+                    </div>
+                    <div class="text-center">
+                        <svg class="icon-cancel">
+                            <use xlink:href="#Vector"></use>
+                        </svg>
+                    </div>
+                </div>
+                <div class="comparison-row">
+                    <div class="feature">BPMN processes setup for better management</div>
+                    <div class="text-center">
+                        <svg class="icon-check">
+                            <use xlink:href="#Vector Галочка"></use>
+                        </svg>
+                    </div>
+                    <div class="text-center">
+                        <svg class="icon-cancel">
+                            <use xlink:href="#Vector"></use>
+                        </svg>
+                    </div>
+                </div>
+                <div class="comparison-row">
+                    <div class="feature">Long-term partnership vision</div>
+                    <div class="text-center">
+                        <svg class="icon-check">
+                            <use xlink:href="#Vector Галочка"></use>
+                        </svg>
+                    </div>
+                    <div class="text-center">
+                        <svg class="icon-question">
+                            <use xlink:href="#Vector Знако вопроса"></use>
+                        </svg>
+                    </div>
+                </div>
+                <div class="comparison-row">
+                    <div class="feature">Transparent Management & Reporting</div>
+                    <div class="text-center">
+                        <svg class="icon-check">
+                            <use xlink:href="#Vector Галочка"></use>
+                        </svg>
+                    </div>
+                    <div class="text-center">
+                        <svg class="icon-question">
+                            <use xlink:href="#Vector Знако вопроса"></use>
+                        </svg>
+                    </div>
+                </div>
+                <div class="comparison-row">
+                    <div class="feature">Omni-channel ad management (search & social)</div>
+                    <div class="text-center">
+                        <svg class="icon-check">
+                            <use xlink:href="#Vector Галочка"></use>
+                        </svg>
+                    </div>
+                    <div class="text-center">
+                        <svg class="icon-question">
+                            <use xlink:href="#Vector Знако вопроса"></use>
+                        </svg>
+                    </div>
+                </div>
+                <div class="comparison-row">
+                    <div class="feature">Agile framework and sprint planning</div>
+                    <div class="text-center">
+                        <svg class="icon-check">
+                            <use xlink:href="#Vector Галочка"></use>
+                        </svg>
+                    </div>
+                    <div class="text-center">
+                        <svg class="icon-question">
+                            <use xlink:href="#Vector Знако вопроса"></use>
+                        </svg>
+                    </div>
+                </div>
+                <div class="comparison-row">
+                    <div class="feature">SEO-synergized</div>
+                    <div class="text-center">
+                        <svg class="icon-check">
+                            <use xlink:href="#Vector Галочка"></use>
+                        </svg>
+                    </div>
+                    <div class="text-center">
+                        <svg class="icon-question">
+                            <use xlink:href="#Vector Знако вопроса"></use>
+                        </svg>
+                    </div>
+                </div>
+                <div class="comparison-row">
+                    <div class="feature">24/7 Slack Access</div>
+                    <div class="text-center">
+                        <svg class="icon-check">
+                            <use xlink:href="#Vector Галочка"></use>
+                        </svg>
+                    </div>
+                    <div class="text-center">
+                        <svg class="icon-question">
+                            <use xlink:href="#Vector Знако вопроса"></use>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="ads-ons">
+            <div class="ads-text">
+                <div class="ads-black">
+                    <h2>Add-ons to PPC management</h2>
+                </div>
+            </div>
+            <div class="content">
+                <p class="somt mb-0">Sometimes, even the best Google Ads strategies can fall short due to external
+                    factors affecting
+                    your business</p>
+            </div>
+        </section>
+
+        <section class="server-grid">
+            <div class="servtext">
+                <h4>Server Side Tracking setup</h4>
+                <p>If you’re not tracking accurately, you’re flying blind. Server-side tracking ensures your data is
+                    reliable, even with privacy updates and ad blockers. This setup helps you see the full customer
+                    journey on analytics side, so you can optimize every click and maximize your ad spend.</p>
+                <h5 class="servtext-price">From $900</h5>
+            </div>
+            <div class="servtext">
+                <h4>Creative Design for Ad Assets</h4>
+                <p>Ad visuals can make or break your campaign’s success. We provide custom graphic design for display
+                    ads, social media creatives, and video ads to make sure your message stands out and resonates with
+                    your target audience.</p>
+                <h5 class="servtext-price">From $20 per static image; From $100 per 2D motion</h5>
+            </div>
+            <div class="servtext">
+                <h4>Full CJM Visualization</h4>
+                <p>A clear Customer Journey Map (CJM) shows exactly how buyers move through your funnel. Visualizing
+                    this helps you spot gaps and opportunities, so you (and we) can fine-tune your strategy, create
+                    seamless experiences, and boost conversions at every stage.</p>
+                <h5 class="servtext-price">From $300</h5>
+            </div>
+            <div class="servtext">
+                <h4>PPC Pages Optimization</h4>
+                <p>We design and optimize product and collection pages to maximize your conversion rate and drive more
+                    sales. Each page is tailored for higher CR, ensuring visitors turn into customers. Best of all,
+                    there’s a small fixed fee, plus a bonus based on the increased conversion rate, so you only pay more
+                    when your results improve.</p>
+                <h5 class="servtext-price">From $400</h5>
+            </div>
+        </section>
+
+        <section class="ppcset">
+            <h2 class="ppcheading">
+                PPC set up process for e-commerce businesses that you’ll like
+            </h2>
+
+            <div class="steps-container">
+                <div class="step">
+                    <div class="text01">
+                        <p>01</p>
+                        <h3>Initial analysis and objective setup</h3>
+                    </div>
+                    <div class="line"></div>
+                    <div class="text001">
+                        <p>We dive deep into your current performance, analyzing what’s working and what’s burning cash.
+                            From there, we set clear goals tailored to your business. No fluff—just data-driven
+                            objectives
+                            that move the needle.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="text01">
+                        <p>02</p>
+                        <h3>Learn your business and audience</h3>
+                    </div>
+                    <div class="line"></div>
+                    <div class="text001">
+                        <p>We don’t just launch campaigns—we get inside your business, learning who your customers are,
+                            what they want, and how they buy. This is how we craft strategies that actually convert.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="text01">
+                        <p>03</p>
+                        <h3>Learn your business and audience</h3>
+                    </div>
+                    <div class="line"></div>
+                    <div class="text001">
+                        <p>We research the competition, hunt for new opportunities, and develop winning strategies. This
+                            is where we test, refine, and build a foundation that turns clicks into cash.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="text01">
+                        <p>04</p>
+                        <h3>Learn your business and audience</h3>
+                    </div>
+                    <div class="line"></div>
+                    <div class="text001">
+                        <p>It’s not a “set it and forget it” game. We constantly optimize, tweak, and adapt. Every ad
+                            dollar needs to work harder, and we make sure it does—scaling what works and cutting what
+                            doesn’t.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="text01">
+                        <p>05</p>
+                        <h3>Learn your business and audience</h3>
+                    </div>
+                    <div class="line"></div>
+                    <div class="text001">
+                        <p>You’re never left guessing. We provide clear, no-nonsense reports that break down what’s
+                            working and what needs adjusting. Our communication is constant and transparent, so you’re
+                            always in control and fully informed about how your campaigns are driving growth.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="globalrev">
+                <div class="blockrev">
+                    <div class="textrev">
+                        <h2>Reviews and testimonals</h2>
+                    </div>
+                    <div class="revp">
+                        <p>Check out the reviews and feedback from businesses that have leveled up with our services</p>
+                    </div>
+                </div>
+                <div class="upfree">
+                    <div class="apwork">
+                        <img src="Images/apworklogo.webp" alt="apworklogo">
+                        <div class="aptext">
+                            <p>We’re top 1% Google Ads Talents on Upwork - pre-screened by Upwork Talent Managers and
+                                experts among other 50,000+ teams and freelancers in Google Ads</p>
+                        </div>
+                    </div>
+                    <div class="freeblock">
+                        <div class="stars-and-reviews">
+                            <span class="stars">★★★★★</span>
+                            <span class="review-count">255 reviews</span>
+                        </div>
+                        <img class="freelance-logo" src="Images/freelancefuntlogo.jpg" alt="freelancelogo">
+                        <div class="freelance-description">
+                            <p>We’re Top Rated on Freelancehunt - Ukrainian freelance marketplace and ranking #8 on
+                                Google ads among 1200+ teams and freelancers in Google Ads</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="center-slick">
+                    <div>
+                        <div class="testimonial-wrap">
+                            <div class="testimonial">
+                                <p>"Another testimonial text goes here Another testimonial text goes here Another
+                                    testimonial text goes here Another testimonial text goes here Another testimonial
+                                    text goes here..."</p>
+                                <div class="triangle-left">
+                                    <div class="inner-triangle"></div>
+                                </div>
+                            </div>
+                            <p class="testimonial-author">
+                                Jane Doe
+                                <span class="testimonial-position">
+                                    CEO at ABC Ltd
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="testimonial-wrap">
+                            <div class="testimonial">
+                                <p>"Another testimonial text goes here Another testimonial text goes here Another
+                                    testimonial text goes here Another testimonial text goes here Another testimonial
+                                    text goes here..."</p>
+                                <div class="triangle-left">
+                                    <div class="inner-triangle"></div>
+                                </div>
+                            </div>
+                            <p class="testimonial-author">
+                                Jane Doe
+                                <span class="testimonial-position">
+                                    CEO at ABC Ltd
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="testimonial-wrap">
+                            <div class="testimonial">
+                                <p>""We have been working with Positivus for the past year and have seen a significant
+                                    increase in website traffic and leads as a result of their efforts. The team is
+                                    professional, responsive, and truly cares about the success of our business. We
+                                    highly recommend Positivus to any company looking to grow their online presence.""
+                                </p>
+                                <div class="triangle-left">
+                                    <div class="inner-triangle"></div>
+                                </div>
+                            </div>
+                            <p class="testimonial-author">
+                                Jane Doe
+                                <span class="testimonial-position">
+                                    CEO at ABC Ltd
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="testimonial-wrap">
+                            <div class="testimonial">
+                                <p>""We have been working with Positivus for the past year and have seen a significant
+                                    increase in website traffic and leads as a result of their efforts. The team is
+                                    professional, responsive, and truly cares about the success of our business. We
+                                    highly recommend Positivus to any company looking to grow their online presence."
+                                </p>
+                                <div class="triangle-left">
+                                    <div class="inner-triangle"></div>
+                                </div>
+                            </div>
+                            <p class="testimonial-author">
+                                Jane Doe
+                                <span class="testimonial-position">
+                                    CEO at ABC Ltd
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="testimonial-wrap">
+                            <div class="testimonial">
+                                <p>""We have been working with Positivus for the past year and have seen a significant
+                                    increase in website traffic and leads as a result of their efforts. The team is
+                                    professional, responsive, and truly cares about the success of our business. We
+                                    highly recommend Positivus to any company looking to grow their online presence."
+                                </p>
+                                <div class="triangle-left">
+                                    <div class="inner-triangle"></div>
+                                </div>
+                            </div>
+                            <p class="testimonial-author">
+                                Jane Doe
+                                <span class="testimonial-position">
+                                    CEO at ABC Ltd
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="calendly" id="calendly">
+            <div class="calendly-inline-widget" data-url="https://calendly.com/daria-vildanova-etavrian"
+                style="min-width:320px;height:700px;"></div>
+        </section>
+
+        <section>
+            <div class="greenblock">
+                <div>
+                    <div class="freq">
+                        <h2>Frequently Asked Questions for Etavrian</h2>
+                    </div>
+
+                    <div class="textgreen">
+                        <p>Looks like you’re serious about what we can do for your business since you’ve made it
+                            this far! Take a moment to watch a quick video from Andrew on the right while you go
+                            through our FAQs to learn more about our results and pricing.</p>
+                    </div>
+                </div>
+                <div class="greenbutton">
+                    <a href="#" class="button-link">
+                        <svg class="icon">
+                            <use xlink:href="#play"></use>
+                          </svg>
+                        <span>Click Here</span>
+                    </a>
+                </div>
+
+            </div>
+            <div class="greybutton">
+                <div class="greytext">
+                    <div class="greytext1">
+                        <div class="acordion-header">
+                            <h5 class="mb-0">Can You Guarantee I’ll Make More Money From Google Ads?</h5>
+                            <button class="toggle-button">−</button>
+                        </div>
+                        <div class="line"></div>
+                        <div class="greyblocktext">
+                            <p>We can’t guarantee specific results with Google Ads, and anyone who does isn’t being
+                                realistic. What we do guarantee is that we’ll work hard to optimize your campaigns,
+                                reduce wasted spend, and drive towards the best possible ROAS for your business.</p>
+                            <p>Our performance-based model means we’re as invested in your success as you are. The
+                                better we perform, the better your returns. With transparent reporting, you’ll
+                                always know how your ads are doing and how your investment is paying off.
+                                Ultimately, we focus on making your ad spend smarter and more effective, but no one
+                                can promise exact outcomes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="greybutton">
+                <div class="greytext">
+                    <div class="greytext1">
+                        <div class="acordion-header">
+                            <h5 class="mb-0">What ROI or ROAS Can I Expect?</h5>
+                            <button class="toggle-button">−</button>
+                        </div>
+                        <div class="line"></div>
+                        <div class="greyblocktext">
+                            <p>The ROAS you can expect will depend on various factors like your industry,
+                                competition, and the current state of your ad campaigns. We don’t make blanket
+                                promises because every business is different, but our focus is on optimizing your
+                                campaigns to achieve the highest possible return on ad spend (ROAS).</p>
+                            <p>With our performance-based approach, we’re driven to maximize your results. If your
+                                target ROAS is 3 and we’re able to push it to 4.5 or higher, that’s where you’ll
+                                start seeing real value. While we can’t guarantee specific numbers upfront, our
+                                strategy is to eliminate wasted spend and continually optimize to drive better
+                                returns. Plus, with transparent reporting, you’ll always know how your investment is
+                                performing.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="greybutton">
+                <div class="greytext">
+                    <div class="greytext1">
+                        <div class="acordion-header">
+                            <h5 class="mb-0">Can You Guarantee I’ll Make More Money From Google Ads?</h5>
+                            <button class="toggle-button">−</button>
+                        </div>
+                        <div class="line"></div>
+                        <div class="greyblocktext">
+                            <p>We can’t guarantee specific results with Google Ads, and anyone who does isn’t being
+                                realistic. What we do guarantee is that we’ll work hard to optimize your campaigns,
+                                reduce wasted spend, and drive towards the best possible ROAS for your business.</p>
+                            <p>Our performance-based model means we’re as invested in your success as you are. The
+                                better we perform, the better your returns. With transparent reporting, you’ll
+                                always know how your ads are doing and how your investment is paying off.
+                                Ultimately, we focus on making your ad spend smarter and more effective, but no one
+                                can promise exact outcomes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="greybutton">
+                <div class="greytext">
+                    <div class="greytext1">
+                        <div class="acordion-header">
+                            <h5 class="mb-0">What ROI or ROAS Can I Expect?</h5>
+                            <button class="toggle-button">−</button>
+                        </div>
+                        <div class="line"></div>
+                        <div class="greyblocktext">
+                            <p>The ROAS you can expect will depend on various factors like your industry,
+                                competition, and the current state of your ad campaigns. We don’t make blanket
+                                promises because every business is different, but our focus is on optimizing your
+                                campaigns to achieve the highest possible return on ad spend (ROAS).</p>
+                            <p>With our performance-based approach, we’re driven to maximize your results. If your
+                                target ROAS is 3 and we’re able to push it to 4.5 or higher, that’s where you’ll
+                                start seeing real value. While we can’t guarantee specific numbers upfront, our
+                                strategy is to eliminate wasted spend and continually optimize to drive better
+                                returns. Plus, with transparent reporting, you’ll always know how your investment is
+                                performing.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="greybutton">
+                <div class="greytext">
+                    <div class="greytext1">
+                        <div class="acordion-header">
+                            <h5 class="mb-0">Can You Guarantee I’ll Make More Money From Google Ads?</h5>
+                            <button class="toggle-button">−</button>
+                        </div>
+                        <div class="line"></div>
+                        <div class="greyblocktext">
+                            <p>We can’t guarantee specific results with Google Ads, and anyone who does isn’t being
+                                realistic. What we do guarantee is that we’ll work hard to optimize your campaigns,
+                                reduce wasted spend, and drive towards the best possible ROAS for your business.</p>
+                            <p>Our performance-based model means we’re as invested in your success as you are. The
+                                better we perform, the better your returns. With transparent reporting, you’ll
+                                always know how your ads are doing and how your investment is paying off.
+                                Ultimately, we focus on making your ad spend smarter and more effective, but no one
+                                can promise exact outcomes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="greybutton">
+                <div class="greytext">
+                    <div class="greytext1">
+                        <div class="acordion-header">
+                            <h5 class="mb-0">What ROI or ROAS Can I Expect?</h5>
+                            <button class="toggle-button">−</button>
+                        </div>
+                        <div class="line"></div>
+                        <div class="greyblocktext">
+                            <p>The ROAS you can expect will depend on various factors like your industry,
+                                competition, and the current state of your ad campaigns. We don’t make blanket
+                                promises because every business is different, but our focus is on optimizing your
+                                campaigns to achieve the highest possible return on ad spend (ROAS).</p>
+                            <p>With our performance-based approach, we’re driven to maximize your results. If your
+                                target ROAS is 3 and we’re able to push it to 4.5 or higher, that’s where you’ll
+                                start seeing real value. While we can’t guarantee specific numbers upfront, our
+                                strategy is to eliminate wasted spend and continually optimize to drive better
+                                returns. Plus, with transparent reporting, you’ll always know how your investment is
+                                performing.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- container end -->
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="Js/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+        </script>
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    <script src="Js/main.js"></script>
+</body>
+
+</html>
