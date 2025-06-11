@@ -957,19 +957,33 @@ a.learn-more:hover {
         /* Уменьшаем текст */
     }
 
-    .server-grid>div {
+    /* .server-grid>div {
         width: 100%;
         height: auto;
         margin-top: 20px;
         padding: 20px;
+    } */
+    .server-grid {
+        grid-template-columns: 1fr;
+        /* ← меняем на одну колонку */
+        column-gap: 0;
+        row-gap: 20px;
     }
 
-    .center-slick {
-        padding: 85px 0 200px;
-        margin: 90px auto;
-        border-radius: 45px 45px 45px 45px;
-        background-color: #1a1a1a;
+    .server-grid>div {
+        width: 100%;
+        height: auto;
+        margin-top: 0;
+        padding: 20px;
     }
+}
+
+.center-slick {
+    padding: 85px 0 200px;
+    margin: 90px auto;
+    border-radius: 45px 45px 45px 45px;
+    background-color: #1a1a1a;
+}
 }
 
 @media (max-width: 480px) {
@@ -1011,6 +1025,20 @@ a.learn-more:hover {
         text-align: left;
     }
 
+    .server-grid {
+        grid-template-columns: 1fr;
+        /* ← меняем на одну колонку */
+        column-gap: 0;
+        row-gap: 20px;
+    }
+
+    .server-grid>div {
+        width: 100%;
+        height: auto;
+        margin-top: 0;
+        padding: 20px;
+    }
+
 }
 
 @media (max-width:774px) {
@@ -1020,6 +1048,21 @@ a.learn-more:hover {
         border-radius: 45px 45px 45px 45px;
         background-color: #1a1a1a;
         display: none;
+    }
+}
+
+@media (max-width: 500px) {
+    .steps-container {
+        gap: 25px;
+    }
+
+    .text01 p {
+        font-size: 40px;
+    }
+
+    .text01 h3 {
+        font-size: 18px;
+        margin-left: 10px;
     }
 }
 
@@ -1176,8 +1219,8 @@ a.learn-more:hover {
 .frequently {
     max-width: 800px;
     width: 100%;
-    margin: 0 auto;
-    padding: 0 15px;
+    /* margin: 0 auto;
+    padding: 0 15px;*/
 }
 
 .freq {
@@ -1199,7 +1242,7 @@ a.learn-more:hover {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 20px;
+    /* padding-top: 20px; */
 }
 
 .button-link {
@@ -1510,12 +1553,14 @@ a.learn-more:hover {
         flex-direction: column;
         align-items: flex-start;
         justify-content: space-between;
+
     }
 
     .greenbutton {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        padding-top: 20px;
     }
 }
 
