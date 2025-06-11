@@ -1173,6 +1173,13 @@ a.learn-more:hover {
     justify-content: space-between;
 }
 
+.frequently {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
 .freq {
     padding: 0px 7px;
     gap: 10px;
@@ -1219,9 +1226,6 @@ a.learn-more:hover {
     max-width: 42px;
 }
 
-.textgreen {
-    width: 751px;
-}
 
 .textgreen p {
     font-size: 18px;
