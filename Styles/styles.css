@@ -964,7 +964,6 @@ a.learn-more:hover {
     .freelance-description,
     .aptext {
         font-size: 16px;
-        /* Уменьшаем текст */
     }
 
     /* .server-grid>div {
@@ -1024,6 +1023,7 @@ a.learn-more:hover {
     .freelance-description,
     .aptext,
     .revp p {
+        
         font-size: 14px;
         /* Уменьшаем размер текста */
     }
@@ -1033,6 +1033,7 @@ a.learn-more:hover {
     .freelance-description,
     .aptext {
         text-align: left;
+        padding-left: 10px;
     }
 
     .server-grid {
@@ -1047,6 +1048,9 @@ a.learn-more:hover {
         height: auto;
         margin-top: 0;
         padding: 20px;
+    }
+    .upfree{
+        padding-left: 10px;
     }
 
 }
@@ -1229,6 +1233,8 @@ a.learn-more:hover {
 .frequently {
     max-width: 800px;
     width: 100%;
+    /* margin: 0 auto;
+    padding: 0 15px;*/
 }
 
 .freq {
@@ -1573,4 +1579,3 @@ a.learn-more:hover {
 }
 
 /* MEDIA QURIES END */
-
